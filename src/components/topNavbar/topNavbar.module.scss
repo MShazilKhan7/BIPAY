@@ -1,0 +1,17 @@
+$white: #FFFFFF;
+$darkblue:  #212143;
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: $white;
+}
+
+
+
+
+.icon{
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.75rem; /* 28px */
+}
+
