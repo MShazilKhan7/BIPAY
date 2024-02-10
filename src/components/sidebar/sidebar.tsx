@@ -42,7 +42,7 @@ const itemsDetails: Data[] = [
 
 function Sidebar(){
     return (
-        <div className="min-h-screen w-fit bg-[#F5F5F5] overflow-hidden">
+        <div className="min-h-screen w-fit border border-[#E0E0E0] bg-[#F5F5F5] overflow-hidden">
             {itemsDetails.map((item,index)=>{
                 return <Item key={index} props={item}/>
             })}

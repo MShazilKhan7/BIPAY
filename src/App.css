@@ -11,3 +11,20 @@
 body{
     overflow: hidden;
 }
+
+/* .db-content{
+
+} */
+.contents{
+    display: flex;
+}
+
+.contents .left-section{
+    width: 250px;
+    height: 100vh;
+}
+.contents .right-section{
+    width: calc(100% - 198px);
+    height: 100vh;
+    /* background-color: lemonchiffon; */
+}

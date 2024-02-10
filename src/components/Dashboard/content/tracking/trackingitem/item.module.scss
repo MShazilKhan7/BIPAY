@@ -1,0 +1,20 @@
+
+.template{
+    content: '';
+    width: 2px;
+    height: 90px;
+    position: absolute;
+    margin-left: -30px;
+    background-color: #E0E0E0;
+}
+.trackingitem:nth-child(2)::after{
+   @extend .template;
+}
+.trackingitem:nth-child(3)::after{
+   @extend .template;
+
+}
+.trackingitem:nth-child(4)::after{
+    @extend .template;
+ 
+ }
