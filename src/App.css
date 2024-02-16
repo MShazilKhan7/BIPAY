@@ -11,10 +11,10 @@
 body{
     overflow: hidden;
 }
+:root{
+    --top-navbar-height: 3rem;
+}
 
-/* .db-content{
-
-} */
 .contents{
     display: flex;
 }
@@ -25,6 +25,8 @@ body{
 }
 .contents .right-section{
     width: calc(100% - 198px);
-    height: 100vh;
+    height: calc(100vh - var(--top-navbar-height));
+    overflow: auto;
+    background-color: rebeccapurple;
     /* background-color: lemonchiffon; */
 }
