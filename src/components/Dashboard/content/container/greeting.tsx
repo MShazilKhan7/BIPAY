@@ -11,7 +11,7 @@ function Greeting():any{
             <div className="greeting-container px-4 py-2 w-full bg-white rounded-lg">
                 <div className="title flex justify-between items-center"> 
                     <div className="h-full heading flex items-start  flex-col gap-1">
-                        <div className="text-[16px] font-semibold">Good to see you, Kimi 👋</div>
+                        <div className="text-[16px] font-bold">Good to see you, Kimi 👋</div>
                         <div className="text-sm opacity-75">You came 15 minutes early today</div>
                     </div>
                     <div className="punch-time flex gap-8 w-56 h-[37px]">

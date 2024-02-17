@@ -13,6 +13,7 @@ body{
 }
 :root{
     --top-navbar-height: 3rem;
+    --normal-bg-color: #F5F5F5;
 }
 
 .contents{
@@ -26,7 +27,6 @@ body{
 .contents .right-section{
     width: calc(100% - 198px);
     height: calc(100vh - var(--top-navbar-height));
+    background-color: #F5F5F5;
     overflow: auto;
-    background-color: rebeccapurple;
-    /* background-color: lemonchiffon; */
 }

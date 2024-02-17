@@ -1,0 +1,37 @@
+:root{
+    --transition: all .2s ease;
+}
+
+.tablesection table{
+    width: 100%;
+}
+
+.tablesection tbody{
+    width: 100%;
+}
+
+.tablesection thead{
+    text-transform: capitalize;
+    background-color: #F5F5F5;
+}
+
+.tablesection thead td:not(:last-child){
+    border-right: 1.5px solid #E0E0E0;
+}
+.tablesection thead,tr{
+    width: 100%;
+}
+.tablesection tr:hover{
+    background-color: #F5F5F5;
+    transition: var(--transition);
+    cursor: pointer;
+}
+.tablesection td{
+    width: 25%;
+    padding: 12px;
+}
+
+
+
+
+
