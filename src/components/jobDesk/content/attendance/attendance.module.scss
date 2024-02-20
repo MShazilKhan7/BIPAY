@@ -1,0 +1,19 @@
+.hourContainer{
+    width: 16.7%;
+}
+
+.dividerline{
+    content:'';
+    width: 2px;
+    height: 60px;
+    background-color:#E0E0E0;
+    position: absolute;
+    margin-left: -8.5px;
+}
+.hourContainer:not(:first-child)::after{
+   @extend .dividerline;
+}
+
+
+// table
+

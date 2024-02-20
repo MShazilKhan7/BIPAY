@@ -5,6 +5,7 @@ $darkblue:  #212143;
     display: flex;
     justify-content: space-between;
     background-color: $white;
+    position: sticky;
 }
 .icon{
     font-size: 1.25rem; /* 20px */

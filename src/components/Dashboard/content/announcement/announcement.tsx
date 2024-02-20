@@ -31,7 +31,7 @@ let data = [
 function Announcement():any{
     return(
         <>
-        <div className="w-full announcement px-8 py-4 bg-[">
+        <div className="w-full announcement px-8 py-4">
             <div className="w-full data-container px-8 py-4 bg-white flex flex-col gap-6 rounded-lg">
                 <p className="font-bold text-sm">Annoucement</p>
                 <div className={combineClasses(styles.tablesection)}>

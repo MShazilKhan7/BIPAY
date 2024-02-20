@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./content/header/job_desk_header";
 import Profile from "./content/highlightProfile/profile";
-
+import RightSection from "./content/mainRightSection/rightsection";
 function JobDesk(){
     return (
         <>
@@ -11,8 +11,8 @@ function JobDesk(){
                 {/* highlight profile section */}
                 <Profile/>
             </div>
-            <div className="jd-right-section h-full w-[71%] bg-slate-400">
-                {/* right section */}
+            <div className="jd-right-section h-full w-[71%]">
+                <RightSection/>
             </div>
         </div>
         </>
