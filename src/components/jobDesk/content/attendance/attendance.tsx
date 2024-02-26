@@ -140,7 +140,6 @@ function Attendance():any{
               })}
               
             </div>
-
             <div className="w-full">
                 <Table details={tableDetails}/>
             </div>

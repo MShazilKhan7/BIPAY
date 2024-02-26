@@ -1,5 +1,5 @@
 import React from "react";
-
+import { BlueButton,WhiteButton } from "src/components/buttons/button";
 
 function Header(){
     return (
@@ -7,8 +7,8 @@ function Header(){
             <div className="w-full content-container flex justify-between items-center">
                 <p className="font-semibold">Dashboard</p>
                 <div className="header-buttons flex items-center gap-2">
-                    <button className="rounded-md text-white px-4 py-[6px] bg-[#212143]">+ Buddy punching</button>
-                    <button className="flex items-center rounded-md px-4 py-[6px] text-black border-[1.5px] border-[#E0E0E0] bg-white text-center">Manager POV</button>
+                    <BlueButton  data={"+ Buddy punching"} />
+                    <WhiteButton data={"Manager POV"}/> 
                 </div>
             </div>
         </div>

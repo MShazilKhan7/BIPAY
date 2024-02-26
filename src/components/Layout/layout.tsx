@@ -20,6 +20,8 @@ function Layout(){
                     <Outlet/>
                     {/* content  */}
                     {/* <DashboadContent/> */}
+                    {/* <jobdesk/> */}
+                    {/* <Emplopyees/> */}
                 </div>
             </div>
         </div>

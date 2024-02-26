@@ -39,9 +39,9 @@ function TrackingContainer() {
     return(
         <div className="tracking w-full px-8 py-4 flex bg-[#F5F5F5]">
             <div className="continer w-full px-8 py-4 flex bg-white rounded-lg gap-7">
-                {items.map((item)=>{
+                {items.map((item,index)=>{
                     return (
-                        <TrackingItem data = {item}/>
+                        <TrackingItem key={index} data = {item}/>
                     )
                 })}
             </div>

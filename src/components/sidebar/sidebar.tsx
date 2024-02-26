@@ -52,17 +52,51 @@ const itemsDetails: Data[] = [
         icon: <BsArrowBarLeft/>,
         name: "Leave",
         path: 'dashboard/',
-        dropdown: false,
-        hoveritems : []
+        dropdown: true,
+        hoveritems : [
+            {
+                itemname: "Status",
+                path: "/"
+            },
+            {
+                itemname: "Request",
+                path: "/"
+            },
+            {
+                itemname: "Calender",
+                path: "/"
+            },
+            {
+                itemname: "Summary",
+                path: "/"
+            },
+
+        ]
 
     },
     {
         icon: <MdAccessTime/>,
         name: "Attendance",
         path: 'dashboard/',
-        dropdown: false,
-        hoveritems : []
-
+        dropdown: true,
+        hoveritems : [
+            {
+                itemname: "Daily Log",
+                path: "/"
+            },
+            {
+                itemname: "Requests",
+                path:"/"
+            },
+            {
+                itemname: "Details",
+                path : "/"
+            },
+            {
+                itemname: "Summary",
+                path :"/"
+            }
+        ]
     },
     {
         icon: <FiSettings/>,

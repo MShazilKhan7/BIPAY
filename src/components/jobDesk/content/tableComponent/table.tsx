@@ -15,19 +15,21 @@ function Table({details}:any):any{
             <table className="w-full"> 
                 <thead className = {combineClasses(styles.tableHeader,"bg-[#F5F5F5] w-full")} >
                     <tr className="w-full min-h-[42px]">
-                    {details.tableHeader.map((headerdata:string)=>{
-                        return (<td className={`w-[calc(100% / ${details.tableHeader.length})] px-3 py-3 text-[12px] whitespace-nowrap`}>{headerdata}</td>)
+                    {details.tableHeader.map((headerdata:string,index:number)=>{
+                        return (<td key={index} className={`w-[calc(100% / ${details.tableHeader.length})] px-3 py-3 text-[12px] whitespace-nowrap`}>{headerdata}</td>)
                     })}
                     </tr>
                 </thead>
                 {/* could be overflow auto for more data */}
                 <tbody>
-                    {details.tableData.map((row:any)=>{
+                    {details.tableData.map((row:any, index:number)=>{
+                            console.log("I am inside the row maps")
+
                         return (
-                            <tr className="w-full min-h-[42px]">
-                                {Object.values(row).map((value:any)=>{
+                            <tr key={index} className="w-full min-h-[42px]">
+                                {Object.values(row).map((value:any, index:number)=>{
                                     return (
-                                        <td className={`w-[calc(100% / ${details.tableHeader.length})] px-3 py-3 text-[12px] `}>
+                                        <td key={index} className={`w-[calc(100% / ${details.tableHeader.length})] px-3 py-3 text-[12px] `}>
                                             {value}
                                         </td>
                                     )

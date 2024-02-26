@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./content/header/job_desk_header";
 import Profile from "./content/highlightProfile/profile";
 import RightSection from "./content/mainRightSection/rightsection";
-function JobDesk(){
+function JobDeskContent(){
     return (
         <>
         <Header/>
@@ -19,4 +19,4 @@ function JobDesk(){
     )
 }
 
-export default JobDesk;
+export default JobDeskContent;

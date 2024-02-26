@@ -37,15 +37,17 @@ function Announcement():any{
                 <div className={combineClasses(styles.tablesection)}>
                     <table>
                         <thead>
-                            <td>title</td>
-                            <td>start date</td>
-                            <td>End date</td>
-                            <td>description</td>
+                            <tr>
+                                <td>title</td>
+                                <td>start date</td>
+                                <td>End date</td>
+                                <td>description</td>
+                            </tr>
                         </thead>
                         <tbody>
-                        {data.map((d)=>{
+                        {data.map((d,index)=>{
                             return (
-                                <tr>
+                                <tr key={index}>
                                     <td>{d.title}</td>
                                     <td>{d.start_data}</td>
                                     <td>{d.end_date}</td>

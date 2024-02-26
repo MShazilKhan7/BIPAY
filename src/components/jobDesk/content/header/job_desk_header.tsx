@@ -1,5 +1,5 @@
 import React from "react";
-
+import { BlueButton } from "src/components/buttons/button";
 
 
 function Header():any{
@@ -8,7 +8,7 @@ function Header():any{
             <p>Job Desk <span>v</span>Allowance</p> 
             <div className="flex justify-between items-center">
                 <p className="font-bold text-xl">Job Desk</p>
-                <button className="px-4 py-2 flex gap-1 bg-[#212143] text-white rounded-md"><span>+</span><span>Action</span></button>
+                <BlueButton data={"+ Action"}/>
             </div>
         </div>
     )
