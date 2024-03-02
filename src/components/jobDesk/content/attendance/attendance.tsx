@@ -80,6 +80,7 @@ let hoursdata:hoursInfo[]=[
 interface tabletype{
     tableHeader:  string[];
     tableData:    any[];
+    styles: string;
 }
 
 let tableDetails : tabletype;
@@ -113,8 +114,8 @@ tableDetails = {
             behavior: 'Late',
             type: 'Full Amount'
         }
-    ]
-
+    ],
+    styles: ""
 }
 
 function Attendance():any{

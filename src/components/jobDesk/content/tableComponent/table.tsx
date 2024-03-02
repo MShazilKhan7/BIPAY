@@ -12,7 +12,7 @@ required data like
 function Table({details}:any):any{
     return(
         <div className="w-full">
-            <table className="w-full"> 
+            <table className={combineClasses(styles.mainTable, "w-full")}> 
                 <thead className = {combineClasses(styles.tableHeader,"bg-[#F5F5F5] w-full")} >
                     <tr className="w-full min-h-[42px]">
                     {details.tableHeader.map((headerdata:string,index:number)=>{

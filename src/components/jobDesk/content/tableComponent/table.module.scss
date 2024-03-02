@@ -1,4 +1,13 @@
+.mainTable{
+    color: black;
+}
+
 .tableHeader td:not(:last-child){
     border-right: 1.5px solid #E0E0E0;
 }
 
+
+.mainTable td{
+    // background-color: orange;
+    // width: calc(100% / 5);
+}

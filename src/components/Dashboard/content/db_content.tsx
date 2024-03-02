@@ -4,6 +4,8 @@ import Greeting from "./container/greeting";
 import TrackingContainer from "./tracking/tracking_container";
 import Timelog from "./timelog/timelog";
 import Announcement from "./announcement/announcement";
+import Pill from "src/components/pills/pills";
+
 
 function DashboadContent():any{
     return (

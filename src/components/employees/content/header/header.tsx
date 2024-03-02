@@ -8,8 +8,8 @@ function EmployeeHeader(){
             <div className="flex justify-between items-center">
                 <p className="font-bold text-xl">All employees</p>
                 <div className="flex gap-2">
-                    <BlueButton data={"Add Employee"}/>
-                    <WhiteButton data={"invite"}/>
+                    <BlueButton value="Add Employee"/>
+                    <WhiteButton value="invite"/>
                 </div>
             </div>
         </div>

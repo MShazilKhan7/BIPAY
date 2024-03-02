@@ -8,7 +8,7 @@ function Header():any{
             <p>Job Desk <span>v</span>Allowance</p> 
             <div className="flex justify-between items-center">
                 <p className="font-bold text-xl">Job Desk</p>
-                <BlueButton data={"+ Action"}/>
+                <BlueButton value="+ Action"/>
             </div>
         </div>
     )

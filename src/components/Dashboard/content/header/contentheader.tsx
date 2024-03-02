@@ -7,8 +7,8 @@ function Header(){
             <div className="w-full content-container flex justify-between items-center">
                 <p className="font-semibold">Dashboard</p>
                 <div className="header-buttons flex items-center gap-2">
-                    <BlueButton  data={"+ Buddy punching"} />
-                    <WhiteButton data={"Manager POV"}/> 
+                    <BlueButton value="+ Buddy punching" type= "button" />
+                    <WhiteButton value="Manager POV" type= "button"/> 
                 </div>
             </div>
         </div>
