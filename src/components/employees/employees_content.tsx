@@ -52,6 +52,7 @@ function EmployeesContent():any{
           } catch (error) {
               setError(true);
               setLoading(false);
+              console.log(error);
           }
       };
 

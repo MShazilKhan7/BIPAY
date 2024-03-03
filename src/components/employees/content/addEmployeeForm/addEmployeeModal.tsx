@@ -1,28 +1,114 @@
-import * as React from 'react';
+import React, {useState, useEffect} from 'react';
 import clsx from 'clsx';
 import { styled, css } from '@mui/system';
 import { Modal as BaseModal } from '@mui/base/Modal';
 import {BlueButton, WhiteButton} from 'src/components/buttons/button'
 import { useForm } from 'react-hook-form'
 import axios from 'axios';
+import { FaStethoscope } from 'react-icons/fa';
 interface FormFields {
-  name: string;
-  designation: string;
   department: string;
+  designation: string;
+  first_name: string;
+  last_name: string;
+}
+
+interface Employee{
+  department: string;
+  designation: string;
+  first_name: string;
+  last_name: string;
+  status: string;
+  shift: string;
+  joining_date: string;
+}
+
+interface Department{
+  id: string;
+  name: string;
+  location: string;
+  work_shift: string;
+  description:string;
+  manager: string;
+  parent_department: string;
+}
+
+interface Designation{
+  id: string;
+  name: string;
+}
+
+const handleFormSubmission = async(data:FormFields) =>{
+  try {
+    const employee = {
+        department:   parseInt(data.department),
+        designation:  parseInt(data.designation),
+        first_name:   data.first_name,
+        last_name:    data.last_name,
+        status:  "",
+        shift: "",
+    };
+    console.log(employee);
+    const response = await axios.post('http://127.0.0.1:8000/api/employees/', employee);
+} catch (error) {
+  console.error('Error posting data:', error);
+}
 
 }
 
-const handleFormSubmission = (data:FormFields):void =>{
- console.log("The data is: ", data)
-}
 export default function ModalUnstyled() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const {register, handleSubmit, formState: {errors}} = useForm<FormFields>()
-  const fetchDesignations = async ()=>{
-    axios.get('localhost')
+  const [departments, setDepartments]   = useState<Department[]>([])
+  const [designations, setDesignations] = useState<Designation[]>([])
+  const [error, setError] = useState<boolean>(false)
+
+  const {register, handleSubmit, formState: {errors, isSubmitting}} = useForm<FormFields>()
+
+  const fetchDepartments = async()=>{
+    
+    try{
+      const response  = await axios.get('http://127.0.0.1:8000/api/departments/')
+      return response.data;
+    }catch(error){
+      setError(true)
+    }
   } 
+  const fetchDesignations = async()=>{
+    try{
+      const response  = await axios.get('http://127.0.0.1:8000/api/designations/')
+      return response.data;
+    }catch(error){
+      setError(true)
+    }
+  } 
+  const handleFormSubmission = async(data:FormFields) =>{
+    try {
+      const employee = {
+          department:   parseInt(data.department),
+          designation:  parseInt(data.designation),
+          first_name:   data.first_name,
+          last_name:    data.last_name,
+          status:  "",
+          shift: "",
+      };
+      console.log(employee);
+      const response = await axios.post('http://127.0.0.1:8000/api/employees/', employee);
+      setOpen(false)
+  } catch (error) {
+    console.error('Error posting data:', error);
+  }
+
+    useEffect(()=>{
+      fetchDepartments().then(data=>{
+        setDepartments(data);
+      })
+      fetchDesignations().then(data=>{
+        setDesignations(data)
+      })
+    },[])
+
   return (
     <div>
       <TriggerButton type="button" onClick={handleOpen}>
@@ -38,28 +124,42 @@ export default function ModalUnstyled() {
         <ModalContent sx={{ width: 400 }}>
             <h2 className='font-bold'>Add Employee</h2>
             <form action="post" onSubmit={handleSubmit(handleFormSubmission)} className='flex flex-col gap-2'>
-                <div className="name-field">
-                  <div><label htmlFor="Name">Name</label></div>
-                  <div><input {...register("name", {required: "Name is mandatory field",})} type="text" className='w-full h-11 rounded-md'/></div>
+                <div className="firstname-field">
+                  <div><label htmlFor="Name">First Name</label></div>
+                  <div><input {...register("first_name", {required: "first name is mandatory field",})} type="text" className='w-full h-11 rounded-md'/></div>
+                  {errors.first_name && <p className='text-red-500'>{errors.first_name.message}</p>}
+                </div>
+                <div className="lastname-field">
+                  <div><label htmlFor="Name">Last Name</label></div>
+                  <div><input {...register("last_name", {required: "last name is mandatory field",})} type="text" className='w-full h-11 rounded-md'/></div>
+                  {errors.last_name && <p className='text-red-500'>{errors.last_name.message}</p>}
                 </div>
                 <div className="designation-field">
                   <div><label htmlFor="Designation">Designation</label></div>
                   <div>
                     <select {...register("designation", {required: "Designation is required field",})} name="cars" id="cars" className='w-full'>
-                      <option value="volvo">Volvo</option>
-                      <option value="saab">Saab </option>
-                      <option value="mercedes">Mercedes</option>
-                      <option value="audi">Audi</option>
+                      {designations && designations.map((des:Designation)=>{
+                          return <option value={des.id}>{des.name}</option>
+                      })}
+                     {errors.designation && <p className='text-red-500'>{errors.designation.message}</p>}
                     </select>
                   </div>
                 </div>
                 <div className="department-field">
                   <div><label htmlFor="department">Department</label></div>
-                  <div><input {...register("department", {required: "department is mandatory field",})} type="text" className='w-full h-11 rounded-md'/></div>
+                  <div>
+                  <select {...register("department", {required: "department is required field",})} name="cars" id="cars" className='w-full'>
+                    {departments && departments.map((dept:Department)=>{
+                        return <option value={dept.id}>{dept.name}</option>
+                    })}
+                    {errors.department && <p className='text-red-500'>{errors.department.message}</p>}
+                  </select>
+                  </div>
                 </div>
+
                 <div className="buttons flex gap-3">
-                  <BlueButton value='save' type='submit'/>
-                  <WhiteButton value='cancel'/>
+                  <BlueButton value={isSubmitting? "Loading": "Save"} type='submit' disabled={isSubmitting && true}/>
+                  <WhiteButton onClick={()=>{setOpen(false)}} value='cancel'/>
                 </div>
             </form>
             
@@ -69,6 +169,7 @@ export default function ModalUnstyled() {
   );
 }
 
+}
 
 const Backdrop = React.forwardRef<
   HTMLDivElement,
