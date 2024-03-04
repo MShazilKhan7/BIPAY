@@ -74,7 +74,6 @@ function EmployeesContent():any{
               {loading  &&  <h3>Loading...</h3> }
               {!loading && <Table details={data}/>} 
               {error && <h3 className="text-red-400">Error Loading data...</h3>}
-              <ModalUnstyled/>
             </BottomContent>
         </> 
     )
