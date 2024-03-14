@@ -55,4 +55,6 @@ __pycache__/
 *.pyc
 
 # Ignore migration files if you're not using version control for the database schema
-/migrations/
+migrations/
+
+settings.py

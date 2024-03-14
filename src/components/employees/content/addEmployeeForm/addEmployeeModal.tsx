@@ -100,14 +100,16 @@ export default function ModalUnstyled() {
     console.error('Error posting data:', error);
   }
 
-    useEffect(()=>{
-      fetchDepartments().then(data=>{
-        setDepartments(data);
-      })
-      fetchDesignations().then(data=>{
-        setDesignations(data)
-      })
-    },[])
+  }
+
+  useEffect(()=>{
+  fetchDepartments().then(data=>{
+    setDepartments(data);
+  })
+  fetchDesignations().then(data=>{
+    setDesignations(data)
+  })
+},[])
 
   return (
     <div>
@@ -167,8 +169,6 @@ export default function ModalUnstyled() {
       </Modal>
     </div>
   );
-}
-
 }
 
 const Backdrop = React.forwardRef<

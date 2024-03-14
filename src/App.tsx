@@ -15,7 +15,7 @@ function App() {
     <>
     
       <Routes>
-        <Route path='/'                 element={<Layout />}>
+        <Route path='/' element={<Layout />}>
           <Route index                  element={<DashboadContent/>}></Route>
           <Route index path='dashboard/'element={<DashboadContent/>}></Route>
           <Route path='jobdesk/'        element={<JobDeskContent/>}>
