@@ -63,10 +63,16 @@ class Announcement(models.Model):
     department  = models.ForeignKey(Department, on_delete=models.SET_NULL, null=True, blank=True, default=1)
     description = models.CharField(max_length=250, null=True, blank=True)
     
-    
     def __str__(self):
         return self.title
     
+    
+
 # class EmployeesCredentials(models.Model):
 #     username  = models.CharField()
-#     # password  = 
+#     password  = models.CharField()  # hash board
+#     employee  = models.OneToOneField("employee", on_delete=models.CASCADE)
+    
+#     def __str__(self):
+#         return self.username
+    
