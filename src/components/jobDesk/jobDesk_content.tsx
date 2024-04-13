@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./content/header/job_desk_header";
 import Profile from "./content/highlightProfile/profile";
-import RightSection from "./content/mainRightSection/rightsection";
+import RightSection from "./content/mainRightSection/jobDeskRightSection";
 function JobDeskContent(){
     return (
         <>
